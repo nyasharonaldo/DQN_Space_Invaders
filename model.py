@@ -18,6 +18,7 @@ class DeepQNetwork(nn.Module):
         self.optimizer = optim.RMSprop(self.parameters(), lr=ALPHA)
         self.loss = nn.MSELoss()
         self.device = T.device('cuda:0' if T.cuda.is_available() else 'cpu')
+        print(T.cuda.is_available())
         self.to(self.device)
 
     def forward(self, observation):
